@@ -1,0 +1,5 @@
+src/.vscode/launch.json
+src/.vscode/tasks.json
+src/Server/GRPCServer/obj/project.nuget.cache
+src/Server/GRPCServer/obj/Debug/net6.0/staticwebassets.build.json
+src/Server/GRPCServer/Properties/launchSettings.json
