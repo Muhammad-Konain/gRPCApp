@@ -7,6 +7,7 @@ using var channel = GrpcChannel.ForAddress("https://localhost:7156");
 var client = new GRPCClient.ProductService.ProductServiceClient(channel);
 var reply = client.GetAllProducts(new GRPCClient.GetProductRequest{});
 
-Console.WriteLine("Greeting: " + reply.Products);
-Console.WriteLine("Press any key to exit...");
-Console.ReadKey();
+foreach (var product in reply.Products)
+{
+    Console.WriteLine($"Name: {product.Name}, SKU: {product.Sku}, Price: {product.Price}");
+}

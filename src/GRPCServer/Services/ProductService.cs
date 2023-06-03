@@ -33,15 +33,15 @@ public class ProductService : GRPCServer.ProductService.ProductServiceBase
             
             new ProductCatalog 
             {
-                Name = "product 1",
-                Sku = "23",
-                Price = 235
+                Name = "product 3",
+                Sku = "6547",
+                Price = 64.1
             },
             new ProductCatalog 
             {
-                Name = "product 2",
-                Sku = "223",
-                Price = 27
+                Name = "product 4",
+                Sku = "47438",
+                Price = 989
             }
         };
     }
