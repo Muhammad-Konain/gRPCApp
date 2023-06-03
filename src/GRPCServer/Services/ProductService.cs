@@ -6,7 +6,17 @@ public class ProductService : GRPCServer.ProductService.ProductServiceBase
 {
     public override Task<GetProductsResponse> GetAllProducts(GetProductRequest request, ServerCallContext context)
     {
-        var products = new List<ProductCatalog>
+        var products = GetMockProducts();
+
+        var productsResponse = new GetProductsResponse();
+        productsResponse.Products.AddRange(products);
+
+        return Task.FromResult(productsResponse);
+    }
+
+    private List<ProductCatalog> GetMockProducts()
+    {
+        return new List<ProductCatalog>
         {
             new ProductCatalog 
             {
@@ -32,13 +42,7 @@ public class ProductService : GRPCServer.ProductService.ProductServiceBase
                 Name = "product 2",
                 Sku = "223",
                 Price = 27
-            },
+            }
         };
-
-        var productsResponse = new GetProductsResponse();
-        productsResponse.Products.AddRange(products);
-
-        return Task.FromResult(productsResponse);
-
     }
 }

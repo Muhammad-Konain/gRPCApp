@@ -1,0 +1,21 @@
+syntax = "proto3";
+option csharp_namespace = "GRPCClient";
+package productCatalog;
+
+service ProductService {
+    rpc GetAllProducts(GetProductRequest) returns (GetProductsResponse){}
+}
+
+message GetProductRequest {
+    
+}
+
+message GetProductsResponse {
+    repeated ProductCatalog products =1;
+}
+
+message ProductCatalog {
+    string sku = 1;
+    string name = 2;
+    double price = 3;
+}

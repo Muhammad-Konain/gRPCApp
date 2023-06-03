@@ -1,13 +1,13 @@
 syntax = "proto3";
 option csharp_namespace = "GRPCServer";
-package product;
+package productCatalog;
 
 service ProductService {
     rpc GetAllProducts(GetProductRequest) returns (GetProductsResponse){}
 }
 
 message GetProductRequest {
-
+    
 }
 
 message GetProductsResponse {
